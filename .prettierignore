@@ -1,0 +1,9 @@
+# Ignore build artifacts:
+build
+coverage
+# Ignore Next.js artifacts
+.next
+# Ignore Node.js artifacts
+node_modules
+# Ignore TypeScript artifacts
+dist

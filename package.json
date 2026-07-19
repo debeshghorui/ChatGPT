@@ -6,14 +6,14 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css}\"",
-        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css}\"",
+        "format:check": "prettier --check \"**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}\"",
+        "format": "prettier --write \"**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}\"",
         "lint": "eslint",
         "lint:fix": "eslint --fix",
         "prepare": "husky"
     },
     "lint-staged": {
-        "**/*.{js,jsx,ts,tsx,json,css}": "prettier --write --ignore-unknown"
+        "**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}": "prettier --write --ignore-unknown"
     },
     "dependencies": {
         "@base-ui/react": "^1.6.0",

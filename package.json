@@ -6,6 +6,9 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "db:generate": "bun --bun run prisma generate",
+        "db:migrate": "bun --bun run prisma migrate dev",
+        "db:studio": "bun --bun run prisma studio",
         "format:check": "prettier --check \"**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}\"",
         "format": "prettier --write \"**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}\"",
         "lint": "eslint",
@@ -15,9 +18,16 @@
     "lint-staged": {
         "**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}": "prettier --write --ignore-unknown"
     },
+    "packageManager": "bun@1.2.3",
+    "engines": {
+        "node": ">=20",
+        "bun": ">=1.2.3"
+    },
     "dependencies": {
         "@base-ui/react": "^1.6.0",
         "@phosphor-icons/react": "^2.1.10",
+        "@prisma/adapter-pg": "^7.8.0",
+        "@prisma/client": "^7.8.0",
         "@shadcn/react": "^0.2.1",
         "@tanstack/react-query": "^5.101.2",
         "class-variance-authority": "^0.7.1",
@@ -41,7 +51,7 @@
     "devDependencies": {
         "@tailwindcss/postcss": "^4",
         "@tanstack/eslint-plugin-query": "^5.101.2",
-        "@types/node": "^20",
+        "@types/node": "^26.1.1",
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "eslint": "^9",
@@ -50,6 +60,7 @@
         "husky": "^9.1.7",
         "lint-staged": "^17.1.0",
         "prettier": "3.9.5",
+        "prisma": "^7.8.0",
         "tailwindcss": "^4",
         "typescript": "^5"
     },

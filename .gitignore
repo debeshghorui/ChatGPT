@@ -44,3 +44,5 @@ next-env.d.ts
 .cursor\rules\openmemory.mdc
 CLAUDE.md
 AGENTS.md
+
+/lib/generated/prisma

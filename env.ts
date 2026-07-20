@@ -10,6 +10,14 @@ const envSchema = z.object({
         .url()
         .startsWith("postgresql://")
         .describe("The URL of the PostgreSQL database to connect to"),
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z
+        .string()
+        .startsWith("pk_test_")
+        .describe("The public key for the Clerk application"),
+    CLERK_SECRET_KEY: z
+        .string()
+        .startsWith("sk_test_")
+        .describe("The secret key for the Clerk application"),
 });
 
 function createEnv(env: NodeJS.ProcessEnv) {

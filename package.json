@@ -6,6 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "prisma:format": "bun --bun run prisma format",
         "db:generate": "bun --bun run prisma generate",
         "db:migrate": "bun --bun run prisma migrate dev",
         "db:studio": "bun --bun run prisma studio",
@@ -16,7 +17,11 @@
         "prepare": "husky"
     },
     "lint-staged": {
-        "**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}": "prettier --write --ignore-unknown"
+        "**/*.{mjs,cjs,js,jsx,ts,tsx,json,css}": [
+            "prettier --write",
+            "eslint --fix"
+        ],
+        "**/*.{json,css}": "prettier --write"
     },
     "packageManager": "bun@1.2.3",
     "engines": {
@@ -62,6 +67,7 @@
         "husky": "^9.1.7",
         "lint-staged": "^17.1.0",
         "prettier": "3.9.5",
+        "prettier-plugin-tailwindcss": "^0.8.1",
         "prisma": "^7.8.0",
         "tailwindcss": "^4",
         "typescript": "^5"

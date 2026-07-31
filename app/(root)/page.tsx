@@ -1,12 +1,8 @@
-import { ModeToggle } from "@/components/ui/mode-toggle";
-import { UserButton } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-    return (
-        <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <h1 className="text-2xl font-bold">Hello World</h1>
-            <ModeToggle />
-            <UserButton />
-        </div>
-    );
+import { startNewChat } from "@/features/home/actions/start-new-chat";
+
+export default async function page() {
+    const conversationId = await startNewChat();
+    redirect(`/c/${conversationId}`);
 }

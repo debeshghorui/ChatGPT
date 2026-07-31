@@ -14,6 +14,10 @@ export type ConversationIsItem = {
     updatedAt: Date;
 };
 
+/**
+ * Lists non-archived conversations for the current user.
+ * Pinned conversations appear first, then sorted by most recent activity.
+ */
 async function assertConversation(conversationId: string, userId: string) {
     const conversation = await prisma.conversation.findFirst({
         where: {
@@ -27,6 +31,21 @@ async function assertConversation(conversationId: string, userId: string) {
     }
 
     return conversation;
+}
+
+/**
+ * Fetches a single conversation owned by the current user.
+ *
+ * @param conversationId - The conversation to load.
+ * @throws {Error} When the conversation is not found.
+ */
+export async function getConversationById(
+    conversationId: string,
+): Promise<ConversationIsItem | null> {
+    const user = await requireUser();
+    await assertConversation(conversationId, user.id);
+
+    return assertConversation(conversationId, user.id);
 }
 
 export async function listConversations(): Promise<ConversationIsItem[]> {

@@ -18,6 +18,14 @@ const envSchema = z.object({
         .string()
         .startsWith("sk_test_")
         .describe("The secret key for the Clerk application"),
+    OPENAI_MODEL: z
+        .string()
+        .default("gpt-4o-mini")
+        .describe("The model to use for AI operations"),
+    OPENAI_API_KEY: z
+        .string()
+        .startsWith("sk_")
+        .describe("The API key for the OpenAI API"),
 });
 
 function createEnv(env: NodeJS.ProcessEnv) {

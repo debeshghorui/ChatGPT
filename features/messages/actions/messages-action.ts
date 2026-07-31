@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 
 import { requireUser } from "@/features/auth/action/require-user";
 import { prisma } from "@/lib/db";
-import { z } from "zod";
 
 import type { MessageRole, MessageStatus } from "@/lib/generated/prisma/client";
 

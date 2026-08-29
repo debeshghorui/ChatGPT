@@ -4,6 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+<!-- BEGIN:LLM-Wiki-Protocol -->
 # Repository LLM Wiki Protocol
 
 This codebase maintains a persistent **LLM Wiki** in `wiki/` based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). The wiki is the authoritative, compounding knowledge base of the codebase.
@@ -28,3 +29,4 @@ The LLM owns and maintains the wiki:
 - **When discovering gotchas/bugs:** Document in `wiki/conventions-and-gotchas.md`.
 - **On every significant change:** Append an entry to `wiki/log.md` using the format:
   `## [YYYY-MM-DD] <action> | <summary>`
+<!-- END:LLM-Wiki-Protocol -->
